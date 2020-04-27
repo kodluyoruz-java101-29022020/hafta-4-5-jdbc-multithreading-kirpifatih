@@ -10,5 +10,7 @@ public class DepartmentService {
 		this.departmentDAO = departmentDAO;
 	}
 	
+	public List <Department> findAll(){return this.departmentDAO.getAll();}
+	
 	// burada tüm departmanları listeleyen fonksiyonu yazınız.
 }

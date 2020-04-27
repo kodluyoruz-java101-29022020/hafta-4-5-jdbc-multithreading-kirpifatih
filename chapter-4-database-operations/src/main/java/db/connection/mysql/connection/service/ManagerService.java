@@ -10,6 +10,9 @@ public class ManagerService {
 		this.managerDAO = managerDAO;
 	}
 	
+	public List<Manager> GetActiveManager(){
+		return managerDAO.loadAllActiveManagers();
+	}
 	// buraya aktif yöneticileri listeleyen bir fonksiyon yazınız.
 	
 }

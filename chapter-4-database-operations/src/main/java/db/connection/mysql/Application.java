@@ -70,8 +70,10 @@ public class Application {
 					break;
 				case 7:
 					// burada aktif yöneticileri listeleyen bir fonksiyon yazmalısınız.
+					listActiveManagers(managerService);
 					break;
 				case 8:
+					listDepartments(departmentService);
 					// burada tüm departmanları listeleyiniz.
 					break;
 				default:
@@ -203,12 +205,24 @@ public class Application {
 	public static void listActiveManagers(ManagerService managerService) {
 		
 		// Burada ManagerService üzerinden aktif yöneticilerin listesini çekiniz ve ekrana yazdırınız
+      List<Manager> managers = managerService.getActiveManagers();
+		
+		Iterator<Manager> iterator = managers.iterator();
+		while(iterator.hasNext()) {
+			Manager manager = iterator.next();
+		}
+		System.out.println(managers);
 		
 	}
 	
 	public static void listDepartments(DepartmentService departmentService) {
 		
 		// Burada tğm departmanları listeleyen ve ekrana gösteren kodu yazınız.
+		List<Department> departments = departmentService.getAll();
+		Iterator<Department> iterator = departments.iterator();
+		while(iterator.hasNext()) {
+			Department department = iterator.next();
+			System.out.println(department);
 	}
 
 }
